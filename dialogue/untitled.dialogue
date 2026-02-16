@@ -1,0 +1,15 @@
+~ start
+Hello, this is some dialogue.
+Here are some choices.
+- First one
+	You picked the first one.
+- Second one
+	You picked the second one.
+- Start again => start
+- End the conversation => END
+- IM FLUENT IN C++ [if global.Tech >= 5] => start
+For more information see the online documentation.
+
+This is Some Dialogue
+
+=> END

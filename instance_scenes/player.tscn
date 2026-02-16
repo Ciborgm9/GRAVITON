@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbvby4viwoiuj"]
+
+[ext_resource type="Script" uid="uid://cxpm58wbv3vxa" path="res://scripts/player.gd" id="1_xi7g1"]
+[ext_resource type="Texture2D" uid="uid://4d73kyk4iewt" path="res://icon.svg" id="2_yia0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xi7g1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_xi7g1")
+metadata/_custom_type_script = "uid://cxpm58wbv3vxa"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yia0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.8146973e-06, 61.69)
+scale = Vector2(4.345, 1.115)
+shape = SubResource("RectangleShape2D_xi7g1")
+
+[node name="InterRay" type="Area2D" parent="."]
+position = Vector2(0, 61.68)
+scale = Vector2(1, 2)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterRay"]
+position = Vector2(0, 9.985)
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="body_entered" from="InterRay" to="." method="_on_inter_ray_body_entered"]
+[connection signal="body_exited" from="InterRay" to="." method="_on_inter_ray_body_exited"]

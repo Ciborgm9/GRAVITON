@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://coqlkhse0gdng"]
+
+[ext_resource type="PackedScene" uid="uid://bbvby4viwoiuj" path="res://instance_scenes/player.tscn" id="1_k6s54"]
+[ext_resource type="Texture2D" uid="uid://4d73kyk4iewt" path="res://icon.svg" id="2_7tmfp"]
+[ext_resource type="Script" uid="uid://cowymtmm6a4aq" path="res://scripts/interactable.gd" id="3_j6xku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6xku"]
+
+[node name="Testing_Scene" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_k6s54")]
+position = Vector2(957, 539)
+
+[node name="Structure" type="StaticBody2D" parent="."]
+position = Vector2(634, 503)
+scale = Vector2(0.695, 0.695)
+
+[node name="Icon2" type="Sprite2D" parent="Structure"]
+position = Vector2(215.93237, -108.81947)
+rotation = 1.5707964
+scale = Vector2(2.6160748, 4.7150645)
+skew = -0.67020667
+texture = ExtResource("2_7tmfp")
+
+[node name="Icon3" type="Sprite2D" parent="Structure"]
+position = Vector2(38.259056, -359.96716)
+rotation = 0.47542873
+scale = Vector2(3.575603, 4.8659897)
+skew = 0.42760527
+texture = ExtResource("2_7tmfp")
+
+[node name="Icon" type="Sprite2D" parent="Structure"]
+position = Vector2(-194.7409, -18.967117)
+rotation = -1.5707964
+scale = Vector2(2.5624714, 3.244824)
+skew = 0.455531
+texture = ExtResource("2_7tmfp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Structure"]
+position = Vector2(-403.741, -33.967133)
+polygon = PackedVector2Array(30.21582, 73.38129, 382.73386, 254.67627, 847.48206, -94.96405, 464.89206, -169.06483)
+
+[node name="Interactable" type="StaticBody2D" parent="."]
+position = Vector2(1267, 463)
+script = ExtResource("3_j6xku")
+metadata/_custom_type_script = "uid://cowymtmm6a4aq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+scale = Vector2(3.77, 3.77)
+shape = SubResource("RectangleShape2D_j6xku")
