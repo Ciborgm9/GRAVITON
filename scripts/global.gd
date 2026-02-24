@@ -25,10 +25,10 @@ func _ready() -> void:
 	DialogueManager.dialogue_started.connect(dialogue_started)
 	DialogueManager.dialogue_ended.connect(dialogue_ended)
 
-func create_descriptor(text: String) -> Descriptor:
+func create_descriptor(text: String) -> void:
 	var d = Descriptor.new(text)
 	new_descriptor_created.emit(d)
-	return d
+	get_viewport().get_camera_2d().add_child(d)
 
 func dialogue_started(_r: Resource) -> void: 
 	lock_player = true 

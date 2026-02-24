@@ -34,22 +34,14 @@ func _physics_process(_delta: float) -> void:
 		#Bug where if you slide at a specific angle it starts doing weird stuff.
 		#If not fixed, this bug will be exploited by future speedrunners.
 		
-		if Input.is_action_just_pressed("ui_accept"): interact_with_contact()
+		if Input.is_action_just_pressed("ui_accept"):
+			if contact is Interactable: contact.space_pressed()
 
 func _on_inter_ray_body_entered(body: Node2D) -> void:
-	if body is Interactable:
+	if body is Interactable: 
 		contact = body
-		if body.trigger_area:
-			interact_with_contact()
-			body.queue_free() #triggers are deleted after one interaction
+		contact.player_entered()
 
 func _on_inter_ray_body_exited(body: Node2D) -> void:
 	if body == contact: contact = null
 	#Is there really no better way to do this?
-
-func interact_with_contact() -> void:
-	if contact != null:
-		if contact.dialogue != null:
-			DialogueManager.show_dialogue_balloon(contact.dialogue)
-		else:
-			add_child(global.create_descriptor(contact.quote))

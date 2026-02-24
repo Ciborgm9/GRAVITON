@@ -1,8 +1,5 @@
-class_name Item
+@abstract class_name Item
 
-extends RefCounted
+extends Resource
 
 var Item_name: String
-
-func _init(n: String) -> void:
-	Item_name = n
