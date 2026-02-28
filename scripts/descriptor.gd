@@ -4,6 +4,7 @@ extends Label
 
 @onready var yanderedev_would_be_so_proud: float = 0
 var life_time: int
+var shadow: ColorRect
 
 func _init(message: String) -> void:
 	text = message
@@ -15,7 +16,7 @@ func _ready() -> void:
 	position = Vector2(-1725, -940)
 	self.z_index = 100 #What The Fuck
 	
-	var shadow = ColorRect.new()
+	shadow = ColorRect.new()
 	shadow.color = Color(0, 0, 0, 0.6)
 	shadow.z_index = -1
 	shadow.scale = self.scale
@@ -28,6 +29,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	yanderedev_would_be_so_proud += delta
 	if yanderedev_would_be_so_proud > life_time: #Seconds until descriptor gets deleted
-		modulate.a -= delta
+		modulate.a -= delta/2
 		if modulate.a <= 0:
+			global.noti_list.erase(self)
 			queue_free()

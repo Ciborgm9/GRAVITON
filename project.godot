@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 global="*res://scripts/global.gd"
-DescHandler="*res://scripts/desc_handler.gd"
 
 [display]
 

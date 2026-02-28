@@ -60,6 +60,7 @@ shape = SubResource("RectangleShape2D_j6xku")
 [node name="Chest" type="StaticBody2D" parent="."]
 position = Vector2(1415, 468)
 script = ExtResource("4_map4d")
+money = 50
 storaged = Array[ExtResource("5_uxw26")]([SubResource("Resource_uxw26")])
 metadata/_custom_type_script = "uid://ckxrs3a8evgar"
 
