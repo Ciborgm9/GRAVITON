@@ -19,6 +19,7 @@ var Perception: int = 5
 var Science: int = 5
 var Strength: int = 5
 var Tech: int = 5
+#These will NOT be the final character attributes
 
 func _ready() -> void:
 	DialogueManager.dialogue_started.connect(dialogue_started)
@@ -34,7 +35,7 @@ func create_descriptor(text: String) -> void:
 		n.queue_free()
 	
 	noti_list.push_front(d)
-	var h = d.shadow.size.y + 110
+	var h = d.shadow.size.y + 80
 	for i in noti_list:
 		if noti_list.find(i) == 0:
 			pass
