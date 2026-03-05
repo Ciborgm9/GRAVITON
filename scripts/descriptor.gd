@@ -11,20 +11,15 @@ func _init(message: String) -> void:
 	life_time = 8
 
 func _ready() -> void:
-	pivot_offset = size/2
-	scale *= 2
-	position = Vector2(-1725, -940)
-	self.z_index = 100 #What The Fuck
-	
+	position = Vector2(-1745, -940)
+	z_index = 100 #What The Fuck
 	shadow = ColorRect.new()
+	shadow.position += Vector2(-15, -15)
 	shadow.color = Color(0, 0, 0, 0.6)
 	shadow.z_index = -1
-	shadow.scale = self.scale
-	shadow.size = self.size + Vector2(5, 5)
-	shadow.pivot_offset = self.pivot_offset
+	shadow.size = self.size + Vector2(30, 30)
 	add_child(shadow)
-	
-	# I really need to redo this entire thing
+	scale *= 2
 
 func _process(delta: float) -> void:
 	yanderedev_would_be_so_proud += delta
