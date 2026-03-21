@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://coqlkhse0gdng"]
+[gd_scene load_steps=14 format=3 uid="uid://coqlkhse0gdng"]
 
 [ext_resource type="PackedScene" uid="uid://bbvby4viwoiuj" path="res://instance_scenes/player.tscn" id="1_k6s54"]
 [ext_resource type="Texture2D" uid="uid://4d73kyk4iewt" path="res://icon.svg" id="2_7tmfp"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://isnnqoqig57x" path="res://scripts/sword.gd" id="6_00g8v"]
 [ext_resource type="Resource" uid="uid://b7kndwdgscxck" path="res://dialogue/dialogo prueba 1.dialogue" id="7_00g8v"]
 [ext_resource type="Texture2D" uid="uid://cpm21lphoow1t" path="res://todd-howard-the-elder-scrolls-v-skyrim-fallout-4-bethesda-softworks-video-game-make-faces-cb5891e864c17f50f53ad3296c79ff70.png" id="8_7yy31"]
+[ext_resource type="Texture2D" uid="uid://0hpobk1q8w7k" path="res://prueba angar axo 1.png" id="9_kedo2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6xku"]
 
@@ -23,9 +24,11 @@ size = Vector2(65.5, 78.25)
 y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_k6s54")]
+z_index = 2
 position = Vector2(957, 539)
 
 [node name="Structure" type="StaticBody2D" parent="."]
+z_index = 2
 position = Vector2(634, 503)
 scale = Vector2(0.695, 0.695)
 
@@ -63,11 +66,6 @@ metadata/_custom_type_script = "uid://cowymtmm6a4aq"
 scale = Vector2(3.77, 3.77)
 shape = SubResource("RectangleShape2D_j6xku")
 
-[node name="Sprite2D" type="Sprite2D" parent="Interactable"]
-position = Vector2(-284, -144.00002)
-scale = Vector2(1.5482693, 1.5482693)
-texture = ExtResource("4_wlvp0")
-
 [node name="Chest" type="StaticBody2D" parent="."]
 position = Vector2(1415, 468)
 script = ExtResource("4_map4d")
@@ -80,6 +78,7 @@ scale = Vector2(3.77, 3.77)
 shape = SubResource("RectangleShape2D_j6xku")
 
 [node name="Interactable2" type="StaticBody2D" parent="."]
+z_index = 2
 position = Vector2(138, 339)
 script = ExtResource("3_j6xku")
 quote = "un paseo por el mojave te hace desear un invierno nuclear!"
@@ -94,3 +93,17 @@ shape = SubResource("RectangleShape2D_uxw26")
 position = Vector2(-6.7949295e-06, -1.0000099)
 scale = Vector2(0.16701245, 0.08268072)
 texture = ExtResource("8_7yy31")
+
+[node name="plantilla axo" type="Sprite2D" parent="."]
+position = Vector2(983, 319)
+scale = Vector2(1.5482693, 1.5482693)
+texture = ExtResource("4_wlvp0")
+
+[node name="hangar" type="Node2D" parent="."]
+position = Vector2(75, 4197)
+
+[node name="Sprite2D2" type="Sprite2D" parent="hangar"]
+z_index = 1
+position = Vector2(733.99994, -4404)
+scale = Vector2(4.6131234, 4.613123)
+texture = ExtResource("9_kedo2")
