@@ -15,7 +15,7 @@ func _physics_process(_delta: float) -> void:
 		
 		var direction = Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
 		velocity = direction * 300
-		velocity.y /= 2 #cause its isometric view
+		velocity.y /= 1.73 #cause its isometric view
 		
 		if Input.is_action_pressed("walk_left"):
 			$InterRay.rotation = PI/2

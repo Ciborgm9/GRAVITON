@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Isometric Sci-Fi RPG"
+run/main_scene="uid://coqlkhse0gdng"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -58,4 +59,4 @@ walk_right={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/untitled.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/untitled.dialogue", "res://dialogue/dialogo prueba 1.dialogue")
