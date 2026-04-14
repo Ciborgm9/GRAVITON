@@ -1,0 +1,24 @@
+~ start
+pequeña criatura desconocida: "¡Eh, tú!" 
+pequeña criatura desconocida: "¡Sí, tú!" 
+miras abajo y ves una pequeña criatura gritándote.
+pequeña criatura desconocida: "Soy Dios."
+- Creerla  "Me arrodillo ante tí, Dios"  te arrodillas.
+	=> con1
+- "¿Cómo se que eres Dios?"
+	pequeña criatura desconocida: "¡Tengo poderes sobrenaturales!"
+	pequeña criatura desconocida: "Mira, dentro de muy poco, algo muy malo te ocurrirá..."
+	pequeña criatura desconocida: "¡El Sol caerá sobre tí!"
+- "No te creo".
+	pequeña criatura desconocida: "¡Claro que lo soy!"
+	pequeña criatura desconocida: "Mira, dentro de muy poco..."
+	pequeña criatura desconocida: "¡El Sol caerá sobre tí!"
+La criatura sale corriendo, y tú continuas con tu camino. 
+=> END
+~ con1
+Dios: "Perfecto"
+Dios: " ahora te diré una serie de consejos que serán cruciales para toda tu vida en la galaxia"
+- "¿Porque?"
+	Dios: "¡Soy Dios!"
+	Dios: "Y sé que tú necesitas esta ayuda"
+=> END
