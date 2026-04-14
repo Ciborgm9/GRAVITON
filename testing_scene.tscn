@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cowymtmm6a4aq" path="res://scripts/interactable.gd" id="3_j6xku"]
 [ext_resource type="Script" uid="uid://ckxrs3a8evgar" path="res://scripts/chest.gd" id="4_map4d"]
 [ext_resource type="Script" uid="uid://d15vv3uo0qsxy" path="res://scripts/item.gd" id="5_uxw26"]
-[ext_resource type="Script" uid="uid://isnnqoqig57x" path="res://scripts/sword.gd" id="6_00g8v"]
+[ext_resource type="Script" uid="uid://isnnqoqig57x" path="res://scripts/items/sword.gd" id="6_00g8v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6xku"]
 
