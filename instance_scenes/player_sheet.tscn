@@ -1,0 +1,94 @@
+[gd_scene load_steps=2 format=3 uid="uid://bonubxe7xksps"]
+
+[ext_resource type="Script" uid="uid://wxpuceeaxpgt" path="res://scripts/player_sheet.gd" id="1_k1a0n"]
+
+[node name="Player_sheet" type="Control"]
+z_index = 99
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k1a0n")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -407.0
+offset_top = -404.0
+offset_right = 416.0
+offset_bottom = 421.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -366.875
+offset_top = -365.875
+offset_right = 366.875
+offset_bottom = 365.875
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Stats" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "{player_name}
+
+CHARISMA: {Charisma}
+DETERMINATION: {Determination}
+DEXTERITY: {Dexterity}
+ENDURANCE: {Endurance}
+STRENGTH: {Strength}
+INTELLIGENCE: {Intelligence}
+
+{money}Cr"
+
+[node name="Body" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Body: --"
+flat = true
+alignment = 0
+
+[node name="Hands" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Hands: --"
+flat = true
+alignment = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Item_description" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Inventory" type="ScrollContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/Inventory"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Body" to="." method="_on_body_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Hands" to="." method="_on_hands_pressed"]
