@@ -1,5 +1,7 @@
 extends Node
 
+enum Item_types_enum {ESSENCIAL, WEARABLE, TOOL, CONSUMABLE}
+
 @onready var lock_player: bool = false
 
 @onready var noti_list: Array[Descriptor] = []
@@ -11,15 +13,19 @@ var money: int = 100
 
 var player_spawn: Vector2 = Vector2.ZERO
 
-var Academics: int = 5
+#var Academics: int = 5
 var Charisma: int = 5
+var Determination: int = 5
 var Dexterity: int = 5
 var Endurance: int = 5
-var Perception: int = 5
-var Science: int = 5
+#var Perception: int = 5
+#var Science: int = 5
 var Strength: int = 5
-var Tech: int = 5
-#These will NOT be the final character attributes
+#var Tech: int = 5
+var Intelligence: int = 5
+
+var body_equip: Item = null
+var hands_equip: Item = null
 
 func _ready() -> void:
 	DialogueManager.dialogue_started.connect(dialogue_started)

@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://ckxrs3a8evgar" path="res://scripts/chest.gd" id="4_map4d"]
 [ext_resource type="Texture2D" uid="uid://dhywg18n344to" path="res://plantilla axo.png" id="4_wlvp0"]
 [ext_resource type="Script" uid="uid://d15vv3uo0qsxy" path="res://scripts/item.gd" id="5_uxw26"]
-[ext_resource type="Script" uid="uid://isnnqoqig57x" path="res://scripts/sword.gd" id="6_00g8v"]
+[ext_resource type="Script" uid="uid://isnnqoqig57x" path="res://scripts/items/sword.gd" id="6_00g8v"]
 [ext_resource type="Resource" uid="uid://b7kndwdgscxck" path="res://dialogue/dialogo prueba 1.dialogue" id="7_00g8v"]
 [ext_resource type="Texture2D" uid="uid://cpm21lphoow1t" path="res://todd-howard-the-elder-scrolls-v-skyrim-fallout-4-bethesda-softworks-video-game-make-faces-cb5891e864c17f50f53ad3296c79ff70.png" id="8_7yy31"]
 [ext_resource type="Texture2D" uid="uid://0hpobk1q8w7k" path="res://prueba angar axo 1.png" id="9_kedo2"]

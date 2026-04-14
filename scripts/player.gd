@@ -3,13 +3,18 @@ class_name Player
 extends CharacterBody2D
 
 var contact = null
+var pl_sheet = preload("res://instance_scenes/player_sheet.tscn").instantiate()
 
 func _ready() -> void:
+	pl_sheet.visible = false
+	$Camera2D.add_child(pl_sheet)
+	pl_sheet.set_scale(Vector2i(2, 2)) #Because the player node is scaled down (uups)
 	if global.player_spawn != Vector2.ZERO: position = global.player_spawn
 
 func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_cancel"): get_tree().quit()
+	if Input.is_action_just_pressed("popup_sheet"): change_sheet_visibility()
 	
 	if !global.lock_player:
 		
@@ -45,3 +50,11 @@ func _on_inter_ray_body_entered(body: Node2D) -> void:
 func _on_inter_ray_body_exited(body: Node2D) -> void:
 	if body == contact: contact = null
 	#Is there really no better way to do this?
+
+func change_sheet_visibility() -> void:
+	if pl_sheet.visible == false:
+		pl_sheet.visible = true; global.lock_player = true
+		pl_sheet.update_stats()
+		pl_sheet.place_inventory_labels()
+	elif pl_sheet.visible == true:
+		pl_sheet.visible = false; global.lock_player =false
